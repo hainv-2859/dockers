@@ -11,6 +11,7 @@ networks:
 services:
   mariadb:
     image: mariadb:10.6
+    container_name: mariadb_global
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: secret
@@ -25,6 +26,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
+    container_name: pma_mariadb
     restart: always
     ports:
       - "8181:80"

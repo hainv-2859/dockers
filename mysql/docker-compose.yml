@@ -4,7 +4,7 @@ services:
   mysql:
     platform: linux/x86_64
     image: mysql:5.7
-    container_name: db
+    container_name: mysql_global
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_USER: home
@@ -16,7 +16,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: pma
+    container_name: pma_mysql
     links:
       - mysql
     environment:
